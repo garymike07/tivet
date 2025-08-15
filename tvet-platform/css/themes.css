@@ -1,0 +1,336 @@
+/* TVET Platform - Themes CSS */
+
+/* Dark Theme Styles */
+[data-theme="dark"] {
+    /* Update color variables for dark theme */
+    --white: #0f172a;
+    --gray-50: #1e293b;
+    --gray-100: #334155;
+    --gray-200: #475569;
+    --gray-300: #64748b;
+    --gray-400: #94a3b8;
+    --gray-500: #cbd5e1;
+    --gray-600: #e2e8f0;
+    --gray-700: #f1f5f9;
+    --gray-800: #f8fafc;
+    --gray-900: #ffffff;
+}
+
+/* Dark theme specific component overrides */
+[data-theme="dark"] .navbar {
+    background: rgba(15, 23, 42, 0.95);
+    border-bottom-color: var(--gray-200);
+}
+
+[data-theme="dark"] .navbar.scrolled {
+    background: rgba(15, 23, 42, 0.98);
+}
+
+[data-theme="dark"] .hero-overlay {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.9));
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .course-card,
+[data-theme="dark"] .trainer-card,
+[data-theme="dark"] .assessment-card,
+[data-theme="dark"] .pricing-card {
+    background: var(--gray-50);
+    border-color: var(--gray-200);
+}
+
+[data-theme="dark"] .card-footer {
+    background: var(--gray-100);
+}
+
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .filter-select {
+    background: var(--gray-50);
+    border-color: var(--gray-200);
+    color: var(--gray-900);
+}
+
+[data-theme="dark"] .form-input:focus,
+[data-theme="dark"] .form-select:focus,
+[data-theme="dark"] .filter-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+[data-theme="dark"] .badge {
+    background: var(--gray-100);
+    color: var(--gray-800);
+}
+
+[data-theme="dark"] .assessment-stats .stat {
+    background: var(--gray-100);
+    color: var(--gray-800);
+}
+
+[data-theme="dark"] .plan-features li {
+    border-bottom-color: var(--gray-200);
+}
+
+[data-theme="dark"] .footer {
+    background: var(--gray-900);
+}
+
+[data-theme="dark"] .footer-description {
+    color: var(--gray-500);
+}
+
+[data-theme="dark"] .footer-links a {
+    color: var(--gray-500);
+}
+
+[data-theme="dark"] .footer-links a:hover {
+    color: var(--gray-700);
+}
+
+[data-theme="dark"] .social-link {
+    background: var(--gray-100);
+    color: var(--gray-800);
+}
+
+[data-theme="dark"] .social-link:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+[data-theme="dark"] .footer-bottom {
+    border-top-color: var(--gray-200);
+    color: var(--gray-600);
+}
+
+[data-theme="dark"] .notification {
+    background: var(--gray-50);
+    border-color: var(--gray-200);
+}
+
+[data-theme="dark"] .loading-overlay {
+    background: rgba(15, 23, 42, 0.9);
+}
+
+/* Theme transition animations */
+* {
+    transition: background-color var(--transition-normal), 
+                border-color var(--transition-normal), 
+                color var(--transition-normal);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #1e40af;
+        --primary-dark: #1e3a8a;
+        --gray-300: #9ca3af;
+        --gray-400: #6b7280;
+        --gray-500: #4b5563;
+        --gray-600: #374151;
+        --gray-700: #1f2937;
+    }
+    
+    .btn {
+        border-width: 2px;
+    }
+    
+    .card,
+    .course-card,
+    .trainer-card,
+    .assessment-card,
+    .pricing-card {
+        border-width: 2px;
+    }
+    
+    .form-input:focus,
+    .form-select:focus {
+        border-width: 2px;
+        box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .hero-video {
+        animation: none !important;
+    }
+    
+    .loading-spinner {
+        animation: none !important;
+    }
+    
+    .typing-text {
+        animation: none !important;
+    }
+}
+
+/* Print theme */
+@media print {
+    [data-theme="dark"] {
+        --white: #ffffff;
+        --gray-50: #f8fafc;
+        --gray-100: #f1f5f9;
+        --gray-200: #e2e8f0;
+        --gray-300: #cbd5e1;
+        --gray-400: #94a3b8;
+        --gray-500: #64748b;
+        --gray-600: #475569;
+        --gray-700: #334155;
+        --gray-800: #1e293b;
+        --gray-900: #0f172a;
+    }
+    
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+}
+
+/* Theme-specific animations */
+@keyframes fadeInDark {
+    from {
+        opacity: 0;
+        background-color: var(--gray-50);
+    }
+    to {
+        opacity: 1;
+        background-color: var(--white);
+    }
+}
+
+@keyframes fadeInLight {
+    from {
+        opacity: 0;
+        background-color: #f8fafc;
+    }
+    to {
+        opacity: 1;
+        background-color: #ffffff;
+    }
+}
+
+[data-theme="dark"] .card:hover,
+[data-theme="dark"] .course-card:hover,
+[data-theme="dark"] .trainer-card:hover {
+    animation: fadeInDark 0.3s ease-in-out;
+}
+
+[data-theme="light"] .card:hover,
+[data-theme="light"] .course-card:hover,
+[data-theme="light"] .trainer-card:hover {
+    animation: fadeInLight 0.3s ease-in-out;
+}
+
+/* System theme preference detection */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --white: #0f172a;
+        --gray-50: #1e293b;
+        --gray-100: #334155;
+        --gray-200: #475569;
+        --gray-300: #64748b;
+        --gray-400: #94a3b8;
+        --gray-500: #cbd5e1;
+        --gray-600: #e2e8f0;
+        --gray-700: #f1f5f9;
+        --gray-800: #f8fafc;
+        --gray-900: #ffffff;
+    }
+}
+
+/* Theme toggle button states */
+[data-theme="light"] .theme-toggle .theme-icon::before {
+    content: "🌙";
+}
+
+[data-theme="dark"] .theme-toggle .theme-icon::before {
+    content: "☀️";
+}
+
+/* Auto theme based on system preference */
+:root:not([data-theme]) .theme-toggle .theme-icon::before {
+    content: "🌙";
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) .theme-toggle .theme-icon::before {
+        content: "☀️";
+    }
+}
+
+/* Color scheme meta tag support */
+:root {
+    color-scheme: light dark;
+}
+
+[data-theme="light"] {
+    color-scheme: light;
+}
+
+[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+/* Focus indicators for dark theme */
+[data-theme="dark"] .btn:focus,
+[data-theme="dark"] .nav-link:focus,
+[data-theme="dark"] .form-input:focus,
+[data-theme="dark"] .form-select:focus {
+    outline-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+/* Selection colors */
+::selection {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+[data-theme="dark"] ::selection {
+    background: var(--primary-light);
+    color: var(--gray-900);
+}
+
+/* Scrollbar theming */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gray-400);
+    border-radius: var(--border-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-500);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: var(--gray-100);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--gray-400);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-500);
+}
+
